@@ -1,9 +1,8 @@
 # 🏬 HBB Bot — How It Works
 
 > **A Discord bot that runs a shop's work rota and daily chores, so managers don't have to.**
-> This page explains every feature, the full workflow, and shows examples — in plain words, no coding knowledge needed.
+> This page explains every feature, the full workflow, and shows examples — in plain words. 
 >
-> 🔒 The source code is private. This repository is documentation only.
 
 ---
 
