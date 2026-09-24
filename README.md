@@ -564,78 +564,6 @@ The monthly report shows, for each person: **tasks confirmed**, **tasks missed w
 
 ---
 
-## 8. 🧠 How the "smart" scheduling decides
-
-You don't need this to *use* the bot — but if you're curious *why* it picked Sofia and not Marco, here it is in plain words.
-
-### The goals (in order of importance)
-
-1. 🔒 **Respect hard limits.** Never schedule someone on a day they said ❌. Never go above their weekly max days. Keep ⭐ custom hours exactly as promised.
-2. 👥 **Keep 2 people in the shop at all times.** If limits make that impossible, leave a **visible gap** rather than break a rule.
-3. ⚖️ **Be fair.** Give hours in proportion to what each person *asked for*.
-4. 🧩 **Keep days tidy.** No silly 1-hour shifts, no broken-up days.
-
-### The method: filling in layers
-
-Think of the day as **two parallel tracks** (because we need 2 people).
-
-```
-Opening ───────────────────────────────────────────── Closing
-Track 1 (layer 1):  ████████████████████████████████████   ← first, make sure SOMEONE is always in
-Track 2 (layer 2):  ████████████████████████████████████   ← then make sure a SECOND person is in
-```
-
-1. ⭐ **Custom hours go first** and never move.
-2. **Layer 1:** cover every open minute with at least one person.
-3. **Layer 2:** cover anything that still has only one.
-4. Any leftover hole is recorded as a **gap** and shown in ⚠️ to the manager.
-
-### Hardest days first 🧗
-
-The bot doesn't fill Monday→Sunday in date order. Inside each week it does the **hardest day first** — the day with the *fewest people available*.
-
-> *Why?* If it filled Monday–Friday first, it might use up everyone's weekly day-limit on easy days, then have **nobody left** for the Sunday that only two people can work.
-
-### Who gets a gap? — the ranking
-
-For each empty stretch, the bot ranks candidates like this:
-
-1. **Can extend a shift they already have?** (No new commute for a tiny hole.)
-2. **Won't have to fill an awkward in-between gap** in their own day.
-3. **Still under this week's share of hours** (before people who are already at it).
-4. **Furthest behind their own target** — measured as a *percentage of what they asked for*, nudged slightly toward days of the week they usually offered.
-
-> 🍰 *The cake analogy:* everyone asked for a slice. When there's more cake than slices, the bot gives extra crumbs **in proportion** — the person who asked for a big slice gets a bit more, the person who asked for a small slice gets a bit less. Nobody gets stuck with "all the leftover".
-
-### Other little rules
-
-| Rule | Value |
-|---|---|
-| People on the floor at all times | **2** |
-| Shortest new shift | **2 hours** (tiny holes go to someone extending an existing shift, or the shift is stretched) |
-| One person per gap | A gap is given to **one** person, not chopped between many — no "10:00–12:45 + 15:30–17:45" days |
-| Weeks crossing months | Days worked at the end of last month **count** toward this week's limit |
-| Already-approved days | Never overwritten when you regenerate |
-| Someone never answered | Their days count as *not available* (the bot only uses people who said ✅ or ⭐), so it can't schedule them — the manager adds them by hand if needed. Their *hours target* falls back to an equal share of the month's needs |
-
----
-
-## 9. 🛡️ Safety, privacy & memory
-
-| Topic | How it's handled |
-|---|---|
-| 🔐 **Secrets** | The bot's login token is **never** stored in the code — it comes from a private environment variable or a local, git-ignored file |
-| 🔒 **Task privacy** | Private task names only appear to the people on them — even the type-ahead menus are filtered per person; replies are "ephemeral" (only you see them) |
-| 👑 **Manager checks** | Every manager command re-checks who you are on the server side |
-| 💾 **Memory** | All data (rota, preferences, tasks, cover history) is saved to a single local file after every change; it loads on start-up |
-| ♻️ **Old data** | Old saved files still load — the bot upgrades formats automatically |
-| ⏱️ **Discord's 3-second rule** | Discord requires a reply within 3 seconds. Slow jobs (like building the rota) are acknowledged instantly and finished in the background; buttons are acknowledged first, then the work is done |
-| 🌐 **Reconnecting** | If the internet drops, the bot reconnects on its own and re-loads names |
-| 🧹 **Housekeeping** | Old task reminders are pruned so the save file doesn't grow forever |
-| 🚫 **No message reading** | The bot only reacts to slash commands, buttons and forms. It **doesn't read your chat messages** |
-
----
-
 ## 10. ❓ FAQ
 
 **Q: If I press ⏭️ Next day, is the day accepted?**
@@ -689,5 +617,5 @@ In one local file next to the bot. Back that file up and you back up everything.
 
 <p align="center">
   <b>HBB Bot</b> — built to make the rota boring, so people can get on with running the shop. 🏬<br/>
-  <i>Source code is private. This page is documentation only.</i>
+  <i>This page is documentation only. Made by Rickyita.</i>
 </p>
