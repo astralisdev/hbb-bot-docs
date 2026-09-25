@@ -226,7 +226,9 @@ Day timeline (who is on the floor):
 
 Not working: Anna ❌ (said not available)
 ━━━━━━━━━━━━━━━━━━━━
-This week so far: Sofia 12h / 20h · Luca 8h / 16h · …
+Name: week total (+today) | confirmed week | weekly goal | confirmed month | monthly goal | days
+• Sofia: 17h (+5h) | 12h | 16h ⚠️ | 60h | 80h | 4/4 ⚠️
+• Luca: 12h (+4h) | 8h | 16h | 32h | 64h | 2/3
 
 [ ✅ Accept ] [ ➕ Add employee ] [ ⬅️ Previous day ] [ ⏭️ Next day ]
 [ ✏️ Sofia ] [ ✂️ Sofia 10:00-15:00 ] [ ✏️ Luca ] [ ✂️ Luca 14:00-18:00 ] …
@@ -252,8 +254,17 @@ This week so far: Sofia 12h / 20h · Luca 8h / 16h · …
 | ✅ | They said "available all day" — the bot picked their hours, so it's **safe to change** |
 | ⭐ | They gave **custom hours** — it's a promise they made; changing it breaks a commitment |
 | ❌ | Scheduled even though they said "not available" (spotted for you) |
-| ⛔ | They've hit their weekly share / limit |
-| 🚫 | They're over it |
+| ⚠️ | In the weekly summary: over the weekly hours goal, or no days left this week |
+
+#### Reading the weekly summary
+
+The first line of the summary names the columns; each person then gets one line with no labels, fields separated by `|`:
+
+`Name: total (+today) | confirmed week | weekly goal | confirmed month | monthly goal | days`
+
+- **total (+today)** — confirmed hours this week **plus** today's suggestion, with the suggestion in brackets (15h confirmed + 9h suggested → `24h (+9h)`).
+- **confirmed week / month** — only hours the manager has already accepted.
+- **⚠️** — the only warning mark, in two places: after the weekly goal when the total goes over it, and after the days when they've used all their days for the week.
 
 #### A split-shift example ✂️
 
