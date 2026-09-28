@@ -573,7 +573,7 @@ The monthly report shows, for each person: **tasks confirmed**, **tasks missed w
 
 ---
 
-## 10. ❓ FAQ
+## 9. ❓ FAQ
 
 **Q: If I press ⏭️ Next day, is the day accepted?**
 No. **Only ✅ Accept** makes a day official. Skipped days stay as suggestions — you can come back to them.
@@ -604,7 +604,7 @@ In one local file next to the bot. Back that file up and you back up everything.
 
 ---
 
-## 11. 📖 Glossary
+## 10. 📖 Glossary
 
 | Word | Meaning |
 |---|---|
