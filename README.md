@@ -15,8 +15,6 @@
 5. [Part B — When life happens: swapping shifts](#5--part-b--when-life-happens-swapping-shifts)
 6. [Part C — Shop tasks & reminders](#6--part-c--shop-tasks--reminders)
 7. [Every command in one table](#7--every-command-in-one-table)
-8. [How the "smart" scheduling decides](#8--how-the-smart-scheduling-decides)
-9. [Safety, privacy & memory](#9--safety-privacy--memory)
 10. [FAQ](#10--faq)
 11. [Glossary](#11--glossary)
 
@@ -195,7 +193,7 @@ The bot thinks for a few seconds, then posts a summary like:
 > Run `/4_review_shifts` to review and accept.
 
 The important rule: **at least 2 people must be in the shop at every minute it is open.**
-If the bot *can't* reach that (not enough people said "available"), it **doesn't cheat** — it leaves the hole and **warns the manager** so a human can fix it. (More on how it decides in [section 8](#8--how-the-smart-scheduling-decides).)
+If the bot *can't* reach that (not enough people said "available"), it **doesn't cheat** — it leaves the hole and **warns the manager** so a human can fix it. 
 
 > 📝 This is only a **suggestion**. Nothing is official yet.
 
